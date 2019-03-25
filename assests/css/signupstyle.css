@@ -1,0 +1,102 @@
+body{
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+.signup-form{
+  width: 300px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #191919;
+  text-align: center;
+}
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avtar {
+  width: 20%;
+  border-radius: 40%;
+}
+.signup-form h1{
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.signup-form input{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+input[type = "submit"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+input[type = "submit"]:hover{
+  background: #2ecc71;
+}
+input[type = "text"],input[type = "password"],input[type = "Email"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+input[type = "text"]:focus,input[type = "password"]:focus,input[type = "Email"]:focus{
+  width: 280px;
+  border-color: #2ecc71;
+}
+.signup-btn{
+  margin-top: 60px;
+  margin-bottom: 20px;
+  background: #487eb0;
+  color: #fff;
+  border-radius: 44px;
+  cursor: pointer;
+  transition: 0.8s;
+}
+.signup-btn:hover{
+  transform: scale(0.96);
+}
+.signup-form a{
+  text-decoration: none;
+  color: #fff;
+  font-family: "montserrat",sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  transition: 0.8s;
+  display: block;
+}
+.signup-form a:hover{
+  background: rgba(0,0,0,.3);
+}

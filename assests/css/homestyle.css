@@ -1,0 +1,122 @@
+body{
+  background: black;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+}
+
+.side1{
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50);
+}
+
+.side1 a{
+  background: #e74c3c;
+  color: white;
+  font-size: 20px;
+  display: block;
+  width: 200px;
+  padding: 15px;
+  text-decoration: none;
+  margin:8px 0;
+  color: white;
+  border-radius: 6px;
+  margin-left: -150px;
+  transition: 0.6s all;
+}
+
+.side1 a:hover{
+  margin-left: 0;
+}
+
+.navbar{
+  position: fixed;
+  height: 80px;
+  overflow: hidden;
+  top: 0;
+  display: flex;
+  align-items: center;
+  background: #191919;
+  width: 100%;
+}
+.logo{
+  text-align: left;
+  margin: 24px 0 12px 0;
+  color: white;
+  position: absolute;
+  left: 30px;
+  width: 180px;
+  height: 80px;
+}
+img.symbol {
+  width: 30%;
+}
+.menu{
+  position: absolute;
+  right: 20px;
+}
+.menu a{
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: 20px;
+  transition: color 0.3s;
+  text-transform: uppercase;
+}
+.menu a:hover{
+  color: #6ab04c;
+}
+.header{
+  width: 100%;
+  height: 600px;
+  background: url(bg.png) no-repeat 50% 50%;
+  background-size: cover;
+  margin-top: 80px;
+}
+.btn1{
+  display: none;
+  position: absolute;
+  right: 20px;
+}
+.btn1:hover > span{
+  background: #6ab04c;
+}
+.btn1 span{
+  display: block;
+  margin: 6px;
+  width: 40px;
+  height: 3px;
+  background: #333;
+}
+p{
+  padding: 20px;
+  font-size: 20px;
+  text-align: justify;
+
+}
+@media only screen and (max-width : 600px) {
+  .navbar{
+    overflow: visible;
+  }
+  .menu{
+    width: 100%;
+    right: 0;
+    top: 80px;
+    background: #f1f1f1;
+    overflow: hidden;
+    max-height: 0;
+  }
+  .menu a{
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+  }
+  .btn1{
+    display: block;
+    cursor: pointer;
+  }
+  .show{
+    max-height: 500px;
+  }
