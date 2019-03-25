@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>signup</title>
-    <link rel="stylesheet" href="assests/css/signupstyle.css">
-  </head>
-  <body>
+<?php include 'header.php'; ?>
     <div class="signup-form">
       <div class="imgcontainer">
         <img src="assests/images/avtar.png" alt="Avatar" class="avtar">
@@ -16,8 +9,7 @@
         <input type="email" placeholder="Email" class="txtb">
         <input type="password" placeholder="Password" class="txtb">
         <input type="submit" value="Create Account" class="signup-btn">
-        <a href="login.html">Already Have one ?</a>
+        <a href="login.php">Already Have one ?</a>
       </form>
     </div>
-  </body>
-</html>
+  <?php include 'footer.php'; ?>
