@@ -8,10 +8,11 @@
 </head>
 
 <body>
+    
     <div class="navbar">
 
         <div class="logo">
-            <img src="assets/images/stadium.jpg" alt="Avatar">
+            <img src="assets/images/logo.png" alt="Avatar">
         </div>
 
         <a class="btn1">
