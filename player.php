@@ -1,6 +1,6 @@
 <?php include 'header.php'; ?>
-<div class="wrapper1">
-    <div class="player-form">
+<div class="wrapper">
+    <div class="form1">
         <div class="input-fields">
             <h1>Batting team</h1>
             <input type="text" class="input" placeholder="Striker Batsman Name" required>

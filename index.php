@@ -1,8 +1,5 @@
 <?php include 'header.php'; ?>
 
-
-
-
 <div class="header">
 
 </div>

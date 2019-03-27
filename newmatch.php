@@ -2,7 +2,7 @@
 
 
 <div class="wrapper">
-    <div class="newmatch-form">
+    <div class="form1">
         <div class="input-fields">
             <h1>MATCH DETAILS</h1>
             <input type="text" class="input" placeholder="Tournment/series" required>

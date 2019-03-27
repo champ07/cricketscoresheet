@@ -1,4 +1,5 @@
 <?php include 'header.php'; ?>
+
 <div class="main">
     <span id="team_id">Your team</span> &nbsp <span id="current_score">0/0</span> <br><br>
     <span id="team_id">Your team</span> &nbsp <span id="current_score">0/0</span>
