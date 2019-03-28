@@ -1,7 +1,7 @@
 <?php include 'header.php'; ?>
 
 <div class="header">
-
+    <center><img src="assets/images/animation.gif" alt="" style="width:600px;height:auto;"></center>
 </div>
 
 <div class="side1">

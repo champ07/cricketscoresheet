@@ -7,6 +7,7 @@ body{
 
 /* header.php */
 
+
 .navbar{
   position: fixed;
   height: 80px;
@@ -377,7 +378,6 @@ h1{
     border:0;
     background: none;
     display: block;
-    margin: 20px auto;
     text-align: center;
     border: 2px solid #3498db;
     outline: none;
@@ -389,7 +389,7 @@ h1{
     width: 70px;
     height: 70px;
     display: flex;
-    margin: 0 20px;
+    margin: 10px 20px;
     border-radius: 60%;
     float: left;
     font-size: 40px;
