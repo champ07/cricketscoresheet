@@ -2,9 +2,9 @@
 
 
 <div class="wrapper">
-    <form class="form1">
+    <form class="form1" method="post" action="teamdetail.php">
         <div class="input-fields">
-            <h1>TEAM DETAILS</h1>
+            <h1>TEAM $ PLAYERS DETAILS</h1>
             <input type="text" name="teamname" class="input" placeholder="Team Name" required>
             <input type="text" name="name1" class="input" placeholder="player Name 1" required>
             <input type="text" name="name2" class="input" placeholder="player Name 2" required>
@@ -18,8 +18,16 @@
             <input type="text" name="name10" class="input" placeholder="player Name 10" required>
             <input type="text" name="name11" class="input" placeholder="player Name 11" required>
             
-            <input type="submit" name="" value="add">
+            <input type="submit" name="submit" value="add">
         </div>
     </form>
 </div>
     <?php include 'footer.php'; ?> 
+
+<?php 
+    if(isset($_POST['submit'])){
+        extract($_POST);
+        $sql = "inset into teamdetails values('$teamname','$name1','$name2','$name3','$name4','$name5','$name6','$name7','$name8','$name9','$name10','$name11')"
+    }
+
+
