@@ -1,4 +1,5 @@
-<?php include 'header.php'; ?>
+<?php include 'header.php';
+$page_name = "score_sheet"; ?>
 
 <div class="main">
     <span id="team_id">Your team</span> &nbsp <span id="current_score">0/0</span> <br><br>
@@ -15,18 +16,18 @@
                 <th>6s</th>
             </tr>
             <tr>
-                <th><span id="player_id">player1</span></th>
-                <th><span id="player_run">0</span></th>
-                <th><span id="player_ball">0</span></th>
-                <th><span id="player_four">0</span></th>
-                <th><span id="player_six">0</span></th>
+                <th><span id="player1_id">player1</span></th>
+                <th><span id="player1_run">0</span></th>
+                <th><span id="player1_ball">0</span></th>
+                <th><span id="player1_four">0</span></th>
+                <th><span id="player1_six">0</span></th>
             </tr>
             <tr>
-                <th><span id="player_id">player2</span></th>
-                <th><span id="player_run">0</span></th>
-                <th><span id="player_ball">0</span></th>
-                <th><span id="player_four">0</span></th>
-                <th><span id="player_six">0</span></th>
+                <th><span id="player2_id">player2</span></th>
+                <th><span id="player2_run">0</span></th>
+                <th><span id="player2_ball">0</span></th>
+                <th><span id="player2_four">0</span></th>
+                <th><span id="player2_six">0</span></th>
             </tr>
 
             <tr>
@@ -37,27 +38,31 @@
                 <th>Maiden</th>
             </tr>
             <tr>
-                <th><span id="player_id">Bowler</span></th>
-                <th><span id="player_run">0</span></th>
-                <th><span id="player_ball">0</span></th>
-                <th><span id="player_four">0</span></th>
-                <th><span id="player_six">0</span></th>
+                <th><span id="bowler_id">Bowler</span></th>
+                <th><span id="bowler_run">0</span></th>
+                <th><span id="bowler_ball">0</span></th>
+                <th><span id="bowler_four">0</span></th>
+                <th><span id="bowler_six">0</span></th>
             </tr>
     </div>
 
     <div class="btns">
-        <a href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">5</a>
-        <a href="#">6</a>
-        <a href="#">W</a>
-        <a href="#">NB</a>
-        <a href="#">B</a>
-        <a href="#">LB</a>
-        <a href="#">WD</a>
+        <a href="#one">1</a>
+        <a href="#two">2</a>
+        <a href="#three">3</a>
+        <a href="#four">4</a>
+        <a href="#five">5</a>
+        <a href="#six">6</a>
+        <a href="#wicket">W</a>
+        <a href="#noBall">NB</a>
+        <a href="#bold">B</a>
+        <a href="#legBy">LB</a>
+        <a href="#wide">WD</a>
         <a href="#">X</a>
     </div>
 </div>
 <?php include 'footer.php'; ?> 
+
+<script type="text/javascript">
+
+</script>
