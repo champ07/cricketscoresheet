@@ -372,7 +372,7 @@ h1{
     width: 100%;
   }
 }
-.main{
+/* .main{
   padding-top: 120px;
   height: 100vh;
   padding: 0;
@@ -382,52 +382,37 @@ h1{
   color: white;
   font-size: 30px;
   text-align: center;
-}
+} */
 
 .details{
   border: 1px solid black;
   color: white;
-  font-size: 30px;
+  font-size: 18px;
   border-collapse: collapse;
   opacity: 0.95;
   padding: 10px;
   text-align: center;
 }
 
-.btns{
-  overflow: hidden;
-  position: absolute;
-  top: 85%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  margin: 10px;
-  border-color: #2ecc71;
-  background: none;
+
+
+.round-btns a:hover{
+background: #3498db;
 }
 
-.btns a {
-    border:0;
-    background: none;
+.round-btns a{ 
     display: block;
     text-align: center;
     border: 2px solid #3498db;
-    outline: none;
-    color: white;
     border-radius: 24px;
     transition: 0.25s;
-    cursor: pointer;
     text-decoration: none;
     width: 70px;
     height: 70px;
-    display: flex;
     margin: 10px 20px;
     border-radius: 60%;
-    float: left;
-    font-size: 40px;
+    font-size: 30px;
     align-items: center;
+    display: flex;
     justify-content: center;
-}
-
-.btns a:hover{
-background: #3498db;
 }
