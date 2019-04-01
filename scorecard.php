@@ -12,7 +12,7 @@ include 'db_conn.php'; ?>
 
 </head>
 
-<body style="background: linear-gradient(rgba(0,0,0,.5)), url(' ../images/stadium.jpg') no-repeat; background-size: cover; color: white;">
+<body style="background: linear-gradient(rgba(0,0,0,.5)), url(' ../images/stadium.jpg') no-repeat; background-size: cover; color: black;">
 
     <div class="navbar">
 
