@@ -40,8 +40,8 @@ include 'db_conn.php'; ?>
         </div>
 
         <div class="">
-            <center><span id="team_id">Your team</span> &nbsp <span id="current_score">0/0</span> <br><br>
-                <span id="team_id">Your team</span> &nbsp <span id="current_score">0/0</span></center>
+            <center><span id="team_id">Your Team</span> &nbsp <span id="current_score">0/0</span> <br><br>
+                <span id="team_id">Oppponent Team</span> &nbsp <span id="current_score">0/0</span></center>
 
             <br><br>
             <div class="details">
