@@ -7,7 +7,7 @@
     <?php if (isset($_GET['teamsuccess'])) {
         echo '<center><div class="alert alert-danger text-center" style="margin-top:100px;color:white;">Team entered successfully!</div></center>';
     } ?>
-    <center><img src="assets/images/animation.gif" alt="" style="width:600px;height:auto;"></center>
+    <center><img src="assets/images/electric.gif" alt="" style="width:700px;height:auto;"></center>
 </div>
 <?php
 if (isset($_SESSION['email'])) {
