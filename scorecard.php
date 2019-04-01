@@ -160,7 +160,7 @@ include 'db_conn.php'; ?>
                                                 <a href="#wide">WD</a>
                                             </div>
                                             <div class="col-4">
-                                                <a href="#">X</a>
+                                                <a href="#">0</a>
                                             </div>
                                         </div>
                                     </div>
@@ -220,5 +220,7 @@ include 'db_conn.php'; ?>
 </html>
 
 <script type="text/javascript">
-
+    $(document).ready(function(){
+        $player_striker = 
+    });
 </script> 

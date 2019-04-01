@@ -49,7 +49,8 @@ include 'db_conn.php'; ?>
                 ?>
             </select>
 
-            <a href="scorecard.php"><input type="submit" name="" value="Next"></a>
+            <input type="submit" name="player_submit" value="Next">
+        </div>
         </div>
     </div>
     <?php include 'footer.php'; ?>
