@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Login form </title>
+    <title> Cricket Score Sheet </title>
     <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
 </head>
