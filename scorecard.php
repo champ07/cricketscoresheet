@@ -11,6 +11,11 @@ include 'db_conn.php'; ?>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
+<?php 
+    if (isset($_POST['submit'])){
+        extract($_POST);
+    }
+?>
 
 <body style="background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),url('assets/images/stadium.jpg'); background-size: cover; color: white;">
         <div class="navbar">
