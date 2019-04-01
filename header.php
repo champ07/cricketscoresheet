@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +10,7 @@
 </head>
 
 <body>
-    
+
     <div class="navbar">
 
         <div class="logo">
@@ -26,6 +27,12 @@
             <a href="index.php">Home</a>
             <a href="#">How to use</a>
             <a href="#">About us</a>
-            <a href="login.php">Login</a>
+
+            <?php if (isset($_SESSION['email'])) {
+                echo '<a href="logout.php">Logout</a>';
+            } else {
+                echo '<a href="login.php">Login</a>';
+            }
+            ?>
         </div>
-    </div> 
+    </div>
