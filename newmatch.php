@@ -1,8 +1,9 @@
-<?php include 'header.php'; include 'db_conn.php'; ?>
+<?php include 'header.php';
+include 'db_conn.php'; ?>
 
 
 <div class="wrapper">
-    <form class="form1" method="post" action="player.php">
+    <form class="form1" method="post" action="newmatch.php">
         <div class="input-fields">
             <h1>MATCH DETAILS</h1>
             <input type="text" name="tname" class="input" placeholder="Tournment/series" required>
@@ -34,19 +35,27 @@
                 }
                 ?>
             </select>
-            <input type="text" class="input" placeholder="Bowling team name" required>
             <label for="">Match type</label>
             <select name="match_type" id="">
                 <option value="limited">Limited Overs</option>
                 <option value="unlimited">Unimited Overs</option>
             </select>
-            <input type="text" name="overs" class="input" placeholder="Overs" required>
+            <input type="number" name="overs" class="input" placeholder="Overs" required>
             <input type="submit" name="submit" value="Next">
         </div>
     </form>
 </div>
 <?php include 'footer.php'; ?>
-
 <?php 
 
+if (isset($_POST['submit'])) {
+    extract($_POST);
+    $sql = "insert into matches (match_name,match_team1,match_team2,match_type,match_overs,user_id) values('$tname','$batting_team','$bowling_team','$match_type'," . $overs . "," . $_SESSION['user_id'] . ");";
+    $_SESSION['team1']= $batting_team;
+    $_SESSION['team2']= $bowling_team;
+    if (!mysqli_query($conn, $sql)) {
+        echo "<script>location.href='index.php';</script>";
+    } else {
+        echo "<script>location.href='player.php';</script>";
+    }
 }

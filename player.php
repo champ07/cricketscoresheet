@@ -1,44 +1,49 @@
-<?php include 'header.php'; ?>
+<?php include 'header.php';
+include 'db_conn.php'; ?>
 <div class="wrapper">
     <div class="form1">
         <div class="input-fields">
             <h1>Batting team</h1>
-            <select class="form-control" name="batting_team" id="todays_patient" required>
+            <select class="form-control" name="striker_batsman" required>
                 <?php
-                $query = "SELECT * from teamdetails where teamname ='" . $batting_team . "';";
+                $query = 'SELECT * from teamdetails where teamname ="' . $_SESSION['team1'] . '";';
                 $result = mysqli_query($conn, $query);
                 $resultCheck = mysqli_num_rows($result);
                 if ($resultCheck > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-
-                        echo '<option value="' . $row['teamname'] . '">' . $row['teamname'] . '</option> ';
+                        for ($i = 1; $i < 12; $i++) {
+                            echo '<option value="' . $row['player' . $i] . '">' . $row['player' . $i] . '</option> ';
+                        }
                     }
                 }
                 ?>
             </select>
-            <select class="form-control" name="batting_team" id="todays_patient" required>
+            <select class="form-control" name="nonstriker_batsman" id="todays_patient" required>
                 <?php
-                $query = "SELECT * from teamdetails where teamname ='" . $batting_team . "';";
+                $query = 'SELECT * from teamdetails where teamname ="' . $_SESSION['team1'] . '";';
                 $result = mysqli_query($conn, $query);
                 $resultCheck = mysqli_num_rows($result);
                 if ($resultCheck > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        echo '<option value="' . $row['player'] . '">' . $row['teamname'] . '</option> ';
+                        for ($i = 1; $i < 12; $i++) {
+                            echo '<option value="' . $row['player' . $i] . '">' . $row['player' . $i] . '</option> ';
+                        }
                     }
                 }
                 ?>
             </select>
 
             <h1>Bowling team</h1>
-            <select class="form-control" name="batting_team" id="todays_patient" required>
+            <select class="form-control" name="opening_bowler" id="todays_patient" required>
                 <?php
-                $query = "SELECT * from teamdetails where teamname ='" . $bowling_team . "';";
+                $query = 'SELECT * from teamdetails where teamname ="' . $_SESSION['team2'] . '";';
                 $result = mysqli_query($conn, $query);
                 $resultCheck = mysqli_num_rows($result);
                 if ($resultCheck > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-
-                        echo '<option value="' . $row['teamname'] . '">' . $row['teamname'] . '</option> ';
+                        for ($i = 1; $i < 12; $i++) {
+                            echo '<option value="' . $row['player' . $i] . '">' . $row['player' . $i] . '</option> ';
+                        }
                     }
                 }
                 ?>

@@ -28,6 +28,10 @@ include 'db_conn.php'; ?>
 <?php 
 if (isset($_POST['submit'])) {
     extract($_POST);
-    $sql = "insert into teamdetails(teamname,player1,player2,player3,player4,player5,player6,player7,player8,player9,player10,player11) values('$teamname','$name1','$name2','$name3','$name4','$name5','$name6','$name7','$name8','$name9','$name10','$name11');";
-    mysqli_query($conn, $sql);
+    $sql = "insert into teamdetails(teamname,player1,player2,player3,player4,player5,player6,player7,player8,player9,player10,player11,user_id) values('$teamname','$name1','$name2','$name3','$name4','$name5','$name6','$name7','$name8','$name9','$name10','$name11',".$_SESSION['user_id'].")";
+    if (!mysqli_query($conn, $sql)) {
+        echo "<script> location.href='index.php?err=true'; </script>";
+    } else {
+        echo "<script> location.href='index.php?teamsuccess=true'; </script>";
+    }
 }
