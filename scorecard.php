@@ -12,7 +12,11 @@ include 'db_conn.php'; ?>
 
 </head>
 
+<<<<<<< HEAD
 <body style="background: linear-gradient(rgba(0,0,0,.5)), url(' ../images/stadium.jpg') no-repeat; background-size: cover; color: black;">
+=======
+<body style="background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),url('assets/images/stadium.jpg'); background-size: cover; color: white;">
+>>>>>>> scorecard fixed
 
     <div class="navbar">
 
