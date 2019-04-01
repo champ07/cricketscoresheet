@@ -2,10 +2,10 @@
 include 'db_conn.php'; ?>
 
 
-<div class="wrapper">
+<div class="wrapper1">
     <form class="form1" method="post" action="teamdetail.php">
         <div class="input-fields">
-            <h1>TEAM $ PLAYERS DETAILS</h1>
+            <h1>TEAM DETAILS</h1>
             <input type="text" name="teamname" class="input" placeholder="Team Name" required>
             <input type="text" name="name1" class="input" placeholder="player Name 1" required>
             <input type="text" name="name2" class="input" placeholder="player Name 2" required>
