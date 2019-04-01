@@ -344,19 +344,12 @@ h1{
     width: 100%;
   }
 }
-
-<<<<<<< Updated upstream
-/* scorecard.php */
-
 .main{
-=======
-.main{
-  margin: 0;
+  margin-top: 120px;
   padding: 0;
   font-family: sans-serif;
   background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url("../images/stadium.jpg") no-repeat;
   background-size: cover;
->>>>>>> Stashed changes
   color: white;
   font-size: 30px;
   text-align: center;
@@ -375,7 +368,7 @@ h1{
 .btns{
   overflow: hidden;
   position: absolute;
-  top: 80%;
+  top: 85%;
   left: 50%;
   transform: translate(-50%,-50%);
   margin: 10px;
