@@ -24,7 +24,7 @@ include 'db_conn.php'; ?>
     <input type="text" name="email" placeholder="Email *" required>
     <input type="password" name="password" placeholder="Password *" required>
     <input type="submit" name="submit" value="Login">
-    <a href="signup.php"></a>
+    <a href="signup.php"><input type="submit" name="signup" value="signup"></a>
 </form>
 
 <?php include 'footer.php'; ?>
