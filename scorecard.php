@@ -45,7 +45,7 @@ include 'db_conn.php'; ?>
         </div>
 
         <div class="">
-            <center><span id="team_id">Your Team</span> &nbsp <span id="runs_your_team">0</span>/<span id="balls_your_team">0</span> <br><br>
+            <center><span id="team_id">Your Team</span> &nbsp <span id="runs_your_team">0</span>/<span id="wickets_your_team">0</span> <br><br>
                 <span id="team_id">Oppponent Team</span> &nbsp <span id="runs_opponent_team">0</span>/<span id="balls_your_team">0</span></center>
 
             <br><br>
@@ -319,8 +319,6 @@ include 'db_conn.php'; ?>
             //runs and balls current score
             i = parseInt($("#runs_your_team").text());
             $("#runs_your_team").html(i+1);
-            i = parseInt($("#balls_your_team").text());
-            $("#balls_your_team").html(i+1);
 
             //increase ball count on every ball
             ball_count++;
@@ -358,8 +356,6 @@ include 'db_conn.php'; ?>
             //runs and balls current score
             i = parseInt($("#runs_your_team").text());
             $("#runs_your_team").html(i+2);
-            i = parseInt($("#balls_your_team").text());
-            $("#balls_your_team").html(i+1);
 
             //increase ball count on every ball
             ball_count++;
@@ -394,8 +390,6 @@ include 'db_conn.php'; ?>
             //runs and balls current score
             i = parseInt($("#runs_your_team").text());
             $("#runs_your_team").html(i+3);
-            i = parseInt($("#balls_your_team").text());
-            $("#balls_your_team").html(i+1);
 
            //increase ball count on every ball
            ball_count++;
@@ -433,8 +427,6 @@ include 'db_conn.php'; ?>
             //runs and balls current score
             i = parseInt($("#runs_your_team").text());
             $("#runs_your_team").html(i+4);
-            i = parseInt($("#balls_your_team").text());
-            $("#balls_your_team").html(i+1);
 
             //increase ball count on every ball
             ball_count++;
@@ -469,8 +461,6 @@ include 'db_conn.php'; ?>
             //runs and balls current score
             i = parseInt($("#runs_your_team").text());
             $("#runs_your_team").html(i+5);
-            i = parseInt($("#balls_your_team").text());
-            $("#balls_your_team").html(i+1);
 
             //increase ball count on every ball
             ball_count++;
@@ -508,8 +498,6 @@ include 'db_conn.php'; ?>
             //runs and balls current score
             i = parseInt($("#runs_your_team").text());
             $("#runs_your_team").html(i+6);
-            i = parseInt($("#balls_your_team").text());
-            $("#balls_your_team").html(i+1);
 
             //increase ball count on every ball
             ball_count++;
@@ -536,8 +524,8 @@ include 'db_conn.php'; ?>
             $("#bowler_over").html(i+0.1);
 
             //runs and balls current score
-            i = parseInt($("#balls_your_team").text());
-            $("#balls_your_team").html(i+1);
+            i = parseInt($("#wickets_your_team").text());
+            $("#wickets_your_team").html(i+1);
 
             //increase ball count on every ball
             ball_count++;
