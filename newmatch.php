@@ -53,6 +53,7 @@ if (isset($_POST['submit'])) {
     $sql = "insert into matches (match_name,match_team1,match_team2,match_type,match_overs,user_id) values('$tname','$batting_team','$bowling_team','$match_type'," . $overs . "," . $_SESSION['user_id'] . ");";
     $_SESSION['team1']= $batting_team;
     $_SESSION['team2']= $bowling_team;
+    $_SESSION['overs'] = $overs;
     if (!mysqli_query($conn, $sql)) {
         echo "<script>location.href='index.php';</script>";
     } else {

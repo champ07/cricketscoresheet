@@ -277,6 +277,119 @@ include 'db_conn.php'; ?>
                 </div>
             </div>
         </div>
+
+        <!-- no ball modal -->
+        <div class="modal" id="noBallModal" tabindex="-1" role="dialog" style="color:black;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">No Ball</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <select class="form-control" name="bowler" id="no_ball_score" required>
+                        <option value="0">no ball + 0</option>
+                        <option value="1">no ball + 1</option>
+                        <option value="2">no ball + 2</option>
+                        <option value="3">no ball + 3</option>
+                        <option value="4">no ball + 4</option>
+                        <option value="5">no ball + 5</option>
+                        <option value="6">no ball + 6</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btn_no_ball_modal_okay" class="btn btn-dark" data-dismiss="modal">okay</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- byes modal -->
+        <div class="modal" id="BModal" tabindex="-1" role="dialog" style="color:black;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Bye</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <select class="form-control" name="bowler" id="bye_score" required>
+                        <option value="0">Bye0</option>
+                        <option value="1">Bye1</option>
+                        <option value="2">Bye2</option>
+                        <option value="3">Bye3</option>
+                        <option value="4">Bye4</option>
+                        <option value="5">Bye5</option>
+                        <option value="6">Bye6</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btn_B_modal_okay" class="btn btn-dark" data-dismiss="modal">okay</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!--leg byes modal -->
+        <div class="modal" id="LBModal" tabindex="-1" role="dialog" style="color:black;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Leg Bye</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <select class="form-control" name="bowler" id="leg_bye_score" required>
+                        <option value="0">LegBye0</option>
+                        <option value="1">LegBye1</option>
+                        <option value="2">LegBye2</option>
+                        <option value="3">LegBye3</option>
+                        <option value="4">LegBye4</option>
+                        <option value="5">LegBye5</option>
+                        <option value="6">LegBye6</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btn_LB_modal_okay" class="btn btn-dark" data-dismiss="modal">okay</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- wide modal -->
+        <div class="modal" id="wideModal" tabindex="-1" role="dialog" style="color:black;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Wide Ball</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <select class="form-control" name="bowler" id="wide_ball_score" required>
+                        <option value="0">wide + 0</option>
+                        <option value="1">wide + 1</option>
+                        <option value="2">wide + 2</option>
+                        <option value="3">wide + 3</option>
+                        <option value="4">wide + 4</option>
+                        <option value="5">wide + 5</option>
+                        <option value="6">wide + 6</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btn_wide_ball_modal_okay" class="btn btn-dark" data-dismiss="modal">okay</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        
         <script src="assets/js/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -291,11 +404,28 @@ include 'db_conn.php'; ?>
         </script>
 <script type="text/javascript">
     $(document).ready(function(){
+        var old_striker;
         var striker_batsman = "<?php echo $striker_batsman;?>";
+        $('#player1_id').html(striker_batsman);
+        $('#player1_id').attr('id','main_table_'+striker_batsman);
+        $('#player1_run').attr('id','main_table_'+striker_batsman+'_run');
+        $('#player1_ball').attr('id','main_table_'+striker_batsman+'_ball');
+        $('#player1_four').attr('id','main_table_'+striker_batsman+'_four');
+        $('#player1_six').attr('id','main_table_'+striker_batsman+'_six');
         var nonstriker_batsman = "<?php echo $nonstriker_batsman;?>";
+        $('#player2_id').html(nonstriker_batsman);
+        $('#player2_id').attr('id','main_table_'+nonstriker_batsman);
+        $('#player2_run').attr('id','main_table_'+nonstriker_batsman+'_run');
+        $('#player2_ball').attr('id','main_table_'+nonstriker_batsman+'_ball');
+        $('#player2_four').attr('id','main_table_'+nonstriker_batsman+'_four');
+        $('#player2_six').attr('id','main_table_'+nonstriker_batsman+'_six');
         var bowler = "<?php echo $opening_bowler;?>";
         //to keep a track of 6 balls of an over
         var ball_count=0;
+        var batting_team = "<?php echo $_SESSION['team1']?>";
+        var bowling_team = "<?php echo $_SESSION['team2']?>";
+        var overs = <?php echo $_SESSION['overs'];?>;
+        var total_balls = overs * 6;
         
         $('#one').click(function(){
             //for batting team table
@@ -307,14 +437,31 @@ include 'db_conn.php'; ?>
             //bowling team table
             i = parseInt($("#runs_"+ bowler).text());
             $("#runs_"+bowler).html(i+1);
-            i = parseInt($("#overs_"+ bowler).text());
-            $("#overs_"+bowler).html(i+0.1);
+            i = parseFloat($("#overs_"+ bowler).text());
+            if(((i%1.0)*10) == 5){
+                $("#overs_"+bowler).html((i+0.5).toFixed(1));
+            }
+            else{
+                $("#overs_"+bowler).html((i+0.1).toFixed(1));
+            }
 
-            //main table
+            //main table bowler
             i = parseInt($("#bowler_run").text());
             $("#bowler_run").html(i+1);
             i = parseFloat($("#bowler_over").text());
-            $("#bowler_over").html(i+0.1);
+            $("#bowler_over").html((i+0.1).toFixed(1));
+            if(((i%1.0)*10) == 5){
+                $("#bowler_over").html((i+0.5).toFixed(1));
+            }
+            else{
+                $("#bowler_over").html((i+0.1).toFixed(1));
+            }
+
+            //main table batsman
+            var i = parseInt($('#main_table_'+striker_batsman+'_run').text());
+            $('#main_table_'+striker_batsman+'_run').html(i+1);
+            i = parseFloat($('#main_table_'+striker_batsman+'_ball').text());
+            $('#main_table_'+striker_batsman+'_ball').html(i+1);
 
             //runs and balls current score
             i = parseInt($("#runs_your_team").text());
@@ -326,12 +473,19 @@ include 'db_conn.php'; ?>
                 $('#changeBowler').modal('show');
                 $('#btn_choose_bowler_modal_okay').click(function(){
                     bowler = $("#bowler_choose").val();
+                    $('#bowler_over').html(0);
+                    $('#bowler_run').html(0);
+                    $('#bowler_wicket').html(0);
+                    $('#bowler_maiden').html(0);
                 });
                 [striker_batsman, nonstriker_batsman] = [nonstriker_batsman, striker_batsman];
             }
             else{
                 [striker_batsman, nonstriker_batsman] = [nonstriker_batsman, striker_batsman];
             }
+
+            //check inning end
+            checkInning();
         });
 
         $('#two').click(function(){
@@ -345,13 +499,30 @@ include 'db_conn.php'; ?>
             i = parseInt($("#runs_"+ bowler).text());
             $("#runs_"+bowler).html(i+2);
             i = parseFloat($("#overs_"+ bowler).text());
-            $("#overs_"+bowler).html(i+0.1);
+            if(((i%1.0)*10) == 5){
+                $("#overs_"+bowler).html((i+0.5).toFixed(1));
+            }
+            else{
+                $("#overs_"+bowler).html((i+0.1).toFixed(1));
+            }
 
             //main table
             i = parseInt($("#bowler_run").text());
             $("#bowler_run").html(i+2);
             i = parseFloat($("#bowler_over").text());
-            $("#bowler_over").html(i+0.1);
+            $("#bowler_over").html((i+0.1).toFixed(1));
+            if(((i%1.0)*10) == 5){
+                $("#bowler_over").html((i+0.5).toFixed(1));
+            }
+            else{
+                $("#bowler_over").html((i+0.1).toFixed(1));
+            }
+
+            //main table batsman
+            var i = parseInt($('#main_table_'+striker_batsman+'_run').text());
+            $('#main_table_'+striker_batsman+'_run').html(i+2);
+            i = parseFloat($('#main_table_'+striker_batsman+'_ball').text());
+            $('#main_table_'+striker_batsman+'_ball').html(i+1);
 
             //runs and balls current score
             i = parseInt($("#runs_your_team").text());
@@ -363,9 +534,16 @@ include 'db_conn.php'; ?>
                 $('#changeBowler').modal('show');
                 $('#btn_choose_bowler_modal_okay').click(function(){
                     bowler = $("#bowler_choose").val();
+                    $('#bowler_over').html(0);
+                    $('#bowler_run').html(0);
+                    $('#bowler_wicket').html(0);
+                    $('#bowler_maiden').html(0);
                 });
+                [striker_batsman, nonstriker_batsman] = [nonstriker_batsman, striker_batsman];
             }
-            [striker_batsman, nonstriker_batsman] = [nonstriker_batsman, striker_batsman];
+
+            //check inning end
+            checkInning();
         });
 
         $('#three').click(function(){
@@ -379,13 +557,30 @@ include 'db_conn.php'; ?>
             i = parseInt($("#runs_"+ bowler).text());
             $("#runs_"+bowler).html(i+3);
             i = parseFloat($("#overs_"+ bowler).text());
-            $("#overs_"+bowler).html(i+0.1);
+            if(((i%1.0)*10) == 5){
+                $("#overs_"+bowler).html((i+0.5).toFixed(1));
+            }
+            else{
+                $("#overs_"+bowler).html((i+0.1).toFixed(1));
+            }
 
             //main table
             i = parseInt($("#bowler_run").text());
             $("#bowler_run").html(i+3);
             i = parseFloat($("#bowler_over").text());
-            $("#bowler_over").html(i+0.1);
+            $("#bowler_over").html((i+0.1).toFixed(1));
+            if(((i%1.0)*10) == 5){
+                $("#bowler_over").html((i+0.5).toFixed(1));
+            }
+            else{
+                $("#bowler_over").html((i+0.1).toFixed(1));
+            }
+
+            //main table batsman
+            var i = parseInt($('#main_table_'+striker_batsman+'_run').text());
+            $('#main_table_'+striker_batsman+'_run').html(i+3);
+            i = parseFloat($('#main_table_'+striker_batsman+'_ball').text());
+            $('#main_table_'+striker_batsman+'_ball').html(i+1);
 
             //runs and balls current score
             i = parseInt($("#runs_your_team").text());
@@ -397,12 +592,19 @@ include 'db_conn.php'; ?>
                 $('#changeBowler').modal('show');
                 $('#btn_choose_bowler_modal_okay').click(function(){
                     bowler = $("#bowler_choose").val();
+                    $('#bowler_over').html(0);
+                    $('#bowler_run').html(0);
+                    $('#bowler_wicket').html(0);
+                    $('#bowler_maiden').html(0);
                 });
                 [striker_batsman, nonstriker_batsman] = [nonstriker_batsman, striker_batsman];
             }
             else{
                 [striker_batsman, nonstriker_batsman] = [nonstriker_batsman, striker_batsman];
             }
+
+            //check inning end
+            checkInning();
         });
 
         $('#four').click(function(){
@@ -416,13 +618,32 @@ include 'db_conn.php'; ?>
             i = parseInt($("#runs_"+ bowler).text());
             $("#runs_"+bowler).html(i+4);
             i = parseFloat($("#overs_"+ bowler).text());
-            $("#overs_"+bowler).html(i+0.1);
+            if(((i%1.0)*10) == 5){
+                $("#overs_"+bowler).html((i+0.5).toFixed(1));
+            }
+            else{
+                $("#overs_"+bowler).html((i+0.1).toFixed(1));
+            }
 
             //main table
             i = parseInt($("#bowler_run").text());
             $("#bowler_run").html(i+4);
             i = parseFloat($("#bowler_over").text());
-            $("#bowler_over").html(i+0.1);
+            $("#bowler_over").html((i+0.1).toFixed(1));
+            if(((i%1.0)*10) == 5){
+                $("#bowler_over").html((i+0.5).toFixed(1));
+            }
+            else{
+                $("#bowler_over").html((i+0.1).toFixed(1));
+            }
+
+            //main table batsman
+            var i = parseInt($('#main_table_'+striker_batsman+'_run').text());
+            $('#main_table_'+striker_batsman+'_run').html(i+4);
+            i = parseFloat($('#main_table_'+striker_batsman+'_ball').text());
+            $('#main_table_'+striker_batsman+'_ball').html(i+1);
+            i = parseFloat($('#main_table_'+striker_batsman+'_four').text());
+            $('#main_table_'+striker_batsman+'_four').html(i+1);
 
             //runs and balls current score
             i = parseInt($("#runs_your_team").text());
@@ -434,9 +655,16 @@ include 'db_conn.php'; ?>
                 $('#changeBowler').modal('show');
                 $('#btn_choose_bowler_modal_okay').click(function(){
                     bowler = $("#bowler_choose").val();
+                    $('#bowler_over').html(0);
+                    $('#bowler_run').html(0);
+                    $('#bowler_wicket').html(0);
+                    $('#bowler_maiden').html(0);
+                    [striker_batsman, nonstriker_batsman] = [nonstriker_batsman, striker_batsman];
                 });
-                [striker_batsman, nonstriker_batsman] = [nonstriker_batsman, striker_batsman];
             }
+
+            //check inning end
+            checkInning();
         });
 
         $('#five').click(function(){
@@ -450,13 +678,30 @@ include 'db_conn.php'; ?>
             i = parseInt($("#runs_"+ bowler).text());
             $("#runs_"+bowler).html(i+5);
             i = parseFloat($("#overs_"+ bowler).text());
-            $("#overs_"+bowler).html(i+0.1);
+            if(((i%1.0)*10) == 5){
+                $("#overs_"+bowler).html((i+0.5).toFixed(1));
+            }
+            else{
+                $("#overs_"+bowler).html((i+0.1).toFixed(1));
+            }
 
             //main table
             i = parseInt($("#bowler_run").text());
             $("#bowler_run").html(i+5);
             i = parseFloat($("#bowler_over").text());
-            $("#bowler_over").html(i+0.1);
+            $("#bowler_over").html((i+0.1).toFixed(1));
+            if(((i%1.0)*10) == 5){
+                $("#bowler_over").html((i+0.5).toFixed(1));
+            }
+            else{
+                $("#bowler_over").html((i+0.1).toFixed(1));
+            }
+
+            //main table batsman
+            var i = parseInt($('#main_table_'+striker_batsman+'_run').text());
+            $('#main_table_'+striker_batsman+'_run').html(i+5);
+            i = parseFloat($('#main_table_'+striker_batsman+'_ball').text());
+            $('#main_table_'+striker_batsman+'_ball').html(i+1);
 
             //runs and balls current score
             i = parseInt($("#runs_your_team").text());
@@ -468,12 +713,19 @@ include 'db_conn.php'; ?>
                 $('#changeBowler').modal('show');
                 $('#btn_choose_bowler_modal_okay').click(function(){
                     bowler = $("#bowler_choose").val();
+                    $('#bowler_over').html(0);
+                    $('#bowler_run').html(0);
+                    $('#bowler_wicket').html(0);
+                    $('#bowler_maiden').html(0);
                 });
                 [striker_batsman, nonstriker_batsman] = [nonstriker_batsman, striker_batsman];
             }
             else{
                 [striker_batsman, nonstriker_batsman] = [nonstriker_batsman, striker_batsman];
             }
+
+            //check inning end
+            checkInning();
         });
 
         $('#six').click(function(){
@@ -487,13 +739,32 @@ include 'db_conn.php'; ?>
             i = parseInt($("#runs_"+ bowler).text());
             $("#runs_"+bowler).html(i+6);
             i = parseFloat($("#overs_"+ bowler).text());
-            $("#overs_"+bowler).html(i+0.1);
+            if(((i%1.0)*10) == 5){
+                $("#overs_"+bowler).html((i+0.5).toFixed(1));
+            }
+            else{
+                $("#overs_"+bowler).html((i+0.1).toFixed(1));
+            }
 
             //main table
             i = parseInt($("#bowler_run").text());
             $("#bowler_run").html(i+6);
             i = parseFloat($("#bowler_over").text());
-            $("#bowler_over").html(i+0.1);
+            $("#bowler_over").html((i+0.1).toFixed(1));
+            if(((i%1.0)*10) == 5){
+                $("#bowler_over").html((i+0.5).toFixed(1));
+            }
+            else{
+                $("#bowler_over").html((i+0.1).toFixed(1));
+            }
+
+            //main table batsman
+            var i = parseInt($('#main_table_'+striker_batsman+'_run').text());
+            $('#main_table_'+striker_batsman+'_run').html(i+6);
+            i = parseFloat($('#main_table_'+striker_batsman+'_ball').text());
+            $('#main_table_'+striker_batsman+'_ball').html(i+1);
+            i = parseFloat($('#main_table_'+striker_batsman+'_six').text());
+            $('#main_table_'+striker_batsman+'_six').html(i+1);
 
             //runs and balls current score
             i = parseInt($("#runs_your_team").text());
@@ -505,9 +776,16 @@ include 'db_conn.php'; ?>
                 $('#changeBowler').modal('show');
                 $('#btn_choose_bowler_modal_okay').click(function(){
                     bowler = $("#bowler_choose").val();
+                    $('#bowler_over').html(0);
+                    $('#bowler_run').html(0);
+                    $('#bowler_wicket').html(0);
+                    $('#bowler_maiden').html(0);
                 });
                 [striker_batsman, nonstriker_batsman] = [nonstriker_batsman, striker_batsman];
             }
+
+            //check inning end
+            checkInning();
         });
 
         $('#wicket').click(function(){
@@ -515,13 +793,24 @@ include 'db_conn.php'; ?>
             i = parseInt($("#wickets_"+ bowler).text());
             $("#wickets_"+bowler).html(i+1);
             i = parseFloat($("#overs_"+ bowler).text());
-            $("#overs_"+bowler).html(i+0.1);
+            if(((i%1.0)*10) == 5){
+                $("#overs_"+bowler).html((i+0.5).toFixed(1));
+            }
+            else{
+                $("#overs_"+bowler).html((i+0.1).toFixed(1));
+            }
 
             //main table
             i = parseInt($("#bowler_wicket").text());
             $("#bowler_wicket").html(i+1);
             i = parseFloat($("#bowler_over").text());
-            $("#bowler_over").html(i+0.1);
+            $("#bowler_over").html((i+0.1).toFixed(1));
+            if(((i%1.0)*10) == 5){
+                $("#bowler_over").html((i+0.5).toFixed(1));
+            }
+            else{
+                $("#bowler_over").html((i+0.1).toFixed(1));
+            }
 
             //runs and balls current score
             i = parseInt($("#wickets_your_team").text());
@@ -533,14 +822,237 @@ include 'db_conn.php'; ?>
                 $('#changeBowler').modal('show');
                 $('#btn_choose_bowler_modal_okay').click(function(){
                     bowler = $("#bowler_choose").val();
+                    $('#bowler_over').html(0);
+                    $('#bowler_run').html(0);
+                    $('#bowler_wicket').html(0);
+                    $('#bowler_maiden').html(0);
                 });
             }
+
+            old_striker = striker_batsman;
+            alert(old_striker);
+            // var old_non_striker = non_striker_batsman;
 
             //choose another batsman
             $('#changeBatsman').modal('show');
                 $('#btn_choose_batsman_modal_okay').click(function(){
                     striker_batsman = $("#batsman_choose").val();
+                    //updating main table IDs on fall of wicket
+                    $('#main_table_'+old_striker).html(striker_batsman);
+                    $('#main_table_'+old_striker).attr('id','main_table_'+striker_batsman);
+                    $('#main_table_'+old_striker+'_run').attr('id','main_table_'+striker_batsman+'_run');
+                    $('#main_table_'+old_striker+'_ball').attr('id','main_table_'+striker_batsman+'_ball');
+                    $('#main_table_'+old_striker+'_four').attr('id','main_table_'+striker_batsman+'_four');
+                    $('#main_table_'+old_striker+'_six').attr('id','main_table_'+striker_batsman+'_six');
+
+                    //setting values to 0 after update
+                    $('#main_table_'+striker_batsman+'_run').html(0);
+                    $('#main_table_'+striker_batsman+'_ball').html(0);
+                    $('#main_table_'+striker_batsman+'_four').html(0);
+                    $('#main_table_'+striker_batsman+'_six').html(0);
+
+                    //check inning end
+                    checkInning();
                 });
         });
+
+        $('#noBall').click(function(){
+            $('#noBallModal').modal('show');
+            $('#btn_no_ball_modal_okay').click(function(){
+                    var no_ball_score = parseInt($("#no_ball_score").val());
+                    //runs and balls current score
+                    var j = parseInt($("#runs_your_team").text());
+                    $("#runs_your_team").html(j+no_ball_score+1);
+
+                    //for batting team table
+                    j = parseInt($("#runs_"+ striker_batsman).text());
+                    $("#runs_"+striker_batsman).html(j+no_ball_score);
+                
+                    //bowling team table
+                    j = parseInt($("#runs_"+ bowler).text());
+                    $("#runs_"+bowler).html(j+no_ball_score+1);
+                
+                    //main table
+                    j = parseInt($("#bowler_run").text());
+                    $("#bowler_run").html(j+no_ball_score+1);
+                
+                    //main table batsman
+                    var i = parseInt($('#main_table_'+striker_batsman+'_run').text());
+                    $('#main_table_'+striker_batsman+'_run').html(i+no_ball_score);
+
+                    //check inning end
+                    checkInning();
+            });
+        });
+
+        $('#B').click(function(){
+            $('#BModal').modal('show');
+            $('#btn_B_modal_okay').click(function(){
+                    var bye_score = parseInt($("#bye_score").val());
+                    //runs and balls current score
+                    var j = parseInt($("#runs_your_team").text());
+                    $("#runs_your_team").html(j+bye_score);
+                
+                    //bowling team table
+                    j = parseInt($("#runs_"+ bowler).text());
+                    $("#runs_"+bowler).html(j+bye_score);
+                    j = parseFloat($("#overs_"+ bowler).text());
+                    if(((j%1.0)*10) == 5){
+                        $("#overs_"+bowler).html((j+0.5).toFixed(1));
+                    }
+                    else{
+                        $("#overs_"+bowler).html((j+0.1).toFixed(1));
+                    }
+                
+                    //main table
+                    j = parseInt($("#bowler_run").text());
+                    $("#bowler_run").html(j+bye_score);
+                    j = parseFloat($("#bowler_over").text());
+                    $("#bowler_over").html((j+0.1).toFixed(1));
+                    if(((j%1.0)*10) == 5){
+                        $("#bowler_over").html((j+0.5).toFixed(1));
+                    }
+                    else{
+                        $("#bowler_over").html((j+0.1).toFixed(1));
+                    }
+                    //main table batsman
+                    j = parseFloat($('#main_table_'+striker_batsman+'_ball').text());
+                    $('#main_table_'+striker_batsman+'_ball').html(j+1);
+
+                    //for batting team table
+                    j = parseFloat($("#balls_"+ striker_batsman).text());
+                    $("#balls_"+striker_batsman).html(j+1);
+
+                    //check inning end
+                    checkInning();
+                    });
+        });
+
+        $('#LB').click(function(){
+            $('#LBModal').modal('show');
+            $('#btn_LB_modal_okay').click(function(){
+                    var bye_score = parseInt($("#leg_bye_score").val());
+                    //runs and balls current score
+                    var j = parseInt($("#runs_your_team").text());
+                    $("#runs_your_team").html(j+bye_score);
+                
+                    //bowling team table
+                    j = parseInt($("#runs_"+ bowler).text());
+                    $("#runs_"+bowler).html(j+bye_score);
+                    j = parseFloat($("#overs_"+ bowler).text());
+                    if(((j%1.0)*10) == 5){
+                        $("#overs_"+bowler).html((j+0.5).toFixed(1));
+                    }
+                    else{
+                        $("#overs_"+bowler).html((j+0.1).toFixed(1));
+                    }
+                
+                    //main table
+                    j = parseInt($("#bowler_run").text());
+                    $("#bowler_run").html(j+bye_score);
+                    j = parseFloat($("#bowler_over").text());
+                    $("#bowler_over").html((j+0.1).toFixed(1));
+                    if(((j%1.0)*10) == 5){
+                        $("#bowler_over").html((j+0.5).toFixed(1));
+                    }
+                    else{
+                        $("#bowler_over").html((j+0.1).toFixed(1));
+                    }
+                    //main table batsman
+                    j = parseFloat($('#main_table_'+striker_batsman+'_ball').text());
+                    $('#main_table_'+striker_batsman+'_ball').html(j+1);
+
+                    //for batting team table
+                    j = parseFloat($("#balls_"+ striker_batsman).text());
+                    $("#balls_"+striker_batsman).html(j+1);
+
+                    //check inning end
+                    checkInning();
+                    });
+        });
+
+        $('#wide').click(function(){
+            $('#wideModal').modal('show');
+            $('#btn_wide_ball_modal_okay').click(function(){
+                    var no_ball_score = parseInt($("#wide_ball_score").val());
+                    //runs and balls current score
+                    var j = parseInt($("#runs_your_team").text());
+                    $("#runs_your_team").html(j+no_ball_score+1);
+
+                    //for batting team table
+                    j = parseInt($("#runs_"+ striker_batsman).text());
+                    $("#runs_"+striker_batsman).html(j+no_ball_score);
+                
+                    //bowling team table
+                    j = parseInt($("#runs_"+ bowler).text());
+                    $("#runs_"+bowler).html(j+no_ball_score+1);
+                
+                    //main table
+                    j = parseInt($("#bowler_run").text());
+                    $("#bowler_run").html(j+no_ball_score+1);
+                
+                    //main table batsman
+                    var i = parseInt($('#main_table_'+striker_batsman+'_run').text());
+                    $('#main_table_'+striker_batsman+'_run').html(i+no_ball_score);
+
+                    //check inning end
+                    checkInning();
+            });
+        });
+
+        $('#zero').click(function(){
+             //for batting team table
+            i = parseFloat($("#balls_"+ striker_batsman).text());
+            $("#balls_"+striker_batsman).html(i+1);
+
+            //bowling team table
+            i = parseFloat($("#overs_"+ bowler).text());
+            if(((i%1.0)*10) == 5){
+                $("#overs_"+bowler).html((i+0.5).toFixed(1));
+            }
+            else{
+                $("#overs_"+bowler).html((i+0.1).toFixed(1));
+            }
+
+            //main table
+            i = parseFloat($("#bowler_over").text());
+            $("#bowler_over").html((i+0.1).toFixed(1));
+            if(((i%1.0)*10) == 5){
+                $("#bowler_over").html((i+0.5).toFixed(1));
+            }
+            else{
+                $("#bowler_over").html((i+0.1).toFixed(1));
+            }
+
+            //main table batsman
+            i = parseFloat($('#main_table_'+striker_batsman+'_ball').text());
+            $('#main_table_'+striker_batsman+'_ball').html(i+1);
+
+            //increase ball count on every ball
+            ball_count++;
+            if(ball_count%6==0){
+                $('#changeBowler').modal('show');
+                $('#btn_choose_bowler_modal_okay').click(function(){
+                    bowler = $("#bowler_choose").val();
+                    $('#bowler_over').html(0);
+                    $('#bowler_run').html(0);
+                    $('#bowler_wicket').html(0);
+                    $('#bowler_maiden').html(0);
+                });
+                [striker_batsman, nonstriker_batsman] = [nonstriker_batsman, striker_batsman];
+            }
+
+            //check inning end
+            checkInning();
+        });
+
+        function checkInning(){
+            //check inning end
+            if(ball_count >= total_balls){
+                //switch batting and bowling team
+                [batting_team, bowling_team]=[bowling_team, batting_team];
+                alert("1st inning over");
+            }
+        }
     });
 </script> 
